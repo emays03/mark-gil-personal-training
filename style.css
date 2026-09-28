@@ -1,0 +1,739 @@
+/* =========================================
+   MARK GIL PERSONAL TRAINING
+   MODULE 4 RESPONSIVE WEBSITE
+   ========================================= */
+
+
+/* =========================================
+   BASIC / RESET STYLES
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #171717;
+    background: #f7f7f5;
+}
+
+
+/* Images stay inside their containers */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Links */
+
+a {
+    color: inherit;
+}
+
+
+/* Main container */
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 10px;
+
+    z-index: 1000;
+
+    padding: 10px 14px;
+
+    background: #ffffff;
+    color: #111111;
+}
+
+
+/* Show skip link when keyboard focused */
+
+.skip-link:focus {
+    left: 10px;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    background: #111111;
+    color: #ffffff;
+
+    border-bottom: 1px solid #333333;
+}
+
+
+.header-inner {
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+/* Logo */
+
+.logo {
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.05;
+
+    letter-spacing: 1px;
+}
+
+
+.logo span {
+    font-size: 1.25rem;
+
+    font-weight: 800;
+}
+
+
+.logo small {
+    margin-top: 4px;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.nav-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.nav-list a {
+    text-decoration: none;
+
+    font-size: 0.9rem;
+}
+
+
+.nav-list a:hover,
+.nav-list a:focus {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero {
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 0, 0, 0.90),
+            rgba(0, 0, 0, 0.55)
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            #555555,
+            #161616 55%,
+            #050505
+        );
+
+    color: #ffffff;
+}
+
+
+.hero-content {
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Small uppercase heading */
+
+.eyebrow {
+    margin: 0 0 12px;
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* Main hero heading */
+
+.hero h1 {
+    max-width: 800px;
+
+    margin: 0;
+
+    font-size: clamp(
+        3rem,
+        8vw,
+        6.5rem
+    );
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+}
+
+
+/* Highlighted text */
+
+.hero h1 span {
+    color: #d8ff35;
+}
+
+
+/* Hero paragraph */
+
+.hero-text {
+    max-width: 650px;
+
+    margin: 28px 0;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+   ========================================= */
+
+.section {
+    padding: 90px 0;
+}
+
+
+.section h2 {
+    margin: 0 0 30px;
+
+    font-size: clamp(
+        2rem,
+        5vw,
+        3.5rem
+    );
+
+    line-height: 1.05;
+}
+
+
+/* About + Contact layouts */
+
+.about-grid,
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1.3fr;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+
+.about-grid p,
+.contact-grid p {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.button {
+    display: inline-block;
+
+    border: 2px solid #d8ff35;
+
+    background: #d8ff35;
+
+    color: #111111;
+
+    padding: 13px 22px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+.button:hover,
+.button:focus {
+    background: #ffffff;
+
+    border-color: #ffffff;
+}
+
+
+/* Outline button */
+
+.button-outline {
+    background: transparent;
+
+    color: #111111;
+
+    border-color: #111111;
+}
+
+
+/* =========================================
+   DARK SERVICES SECTION
+   ========================================= */
+
+.section-dark {
+    background: #111111;
+
+    color: #ffffff;
+}
+
+
+/* Four-column desktop layout */
+
+.card-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* Individual service card */
+
+.card {
+    min-height: 280px;
+
+    padding: 28px;
+
+    background: #1d1d1d;
+
+    border: 1px solid #333333;
+}
+
+
+/* Number icon */
+
+.icon {
+    display: inline-flex;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #d8ff35;
+
+    color: #d8ff35;
+
+    font-weight: 800;
+}
+
+
+.card h3,
+.program h3,
+.price-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 1.35rem;
+}
+
+
+/* =========================================
+   PROGRAMS
+   ========================================= */
+
+.program-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.program {
+    padding: 35px;
+
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+}
+
+
+.program-number {
+    margin: 0 0 12px;
+
+    font-size: 3rem;
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+.program a {
+    font-weight: 800;
+
+    text-decoration-thickness: 2px;
+}
+
+
+/* =========================================
+   PRICING
+   ========================================= */
+
+.pricing-section {
+    background: #e9e9e5;
+}
+
+
+.price-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+    max-width: 850px;
+}
+
+
+.price-card {
+    position: relative;
+
+    padding: 35px;
+
+    background: #ffffff;
+
+    border: 1px solid #cccccc;
+}
+
+
+/* Featured price card */
+
+.price-card.featured {
+    border: 3px solid #111111;
+}
+
+
+/* Popular badge */
+
+.badge {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    margin: 0;
+
+    padding: 4px 8px;
+
+    background: #d8ff35;
+
+    color: #111111;
+
+    font-size: 0.7rem;
+
+    font-weight: 900;
+}
+
+
+/* Price text */
+
+.price {
+    margin: 5px 0;
+
+    font-size: 2.5rem;
+
+    font-weight: 900;
+}
+
+
+/* =========================================
+   CONTACT FORM
+   ========================================= */
+
+.contact-section {
+    background: #ffffff;
+}
+
+
+.contact-form {
+    padding: 35px;
+
+    background: #f3f3f1;
+}
+
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+/* Form labels */
+
+label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-weight: 700;
+}
+
+
+/* Form fields */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #777777;
+
+    border-radius: 0;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font: inherit;
+}
+
+
+/* Keyboard focus */
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+a:focus {
+    outline: 3px solid #8b5cf6;
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.site-footer {
+    padding: 35px 0;
+
+    background: #111111;
+
+    color: #ffffff;
+}
+
+
+.footer-inner {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.footer-inner p {
+    margin: 5px 0 0;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 850px) {
+
+    /* Header becomes vertical */
+
+    .header-inner {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 18px 0;
+    }
+
+
+    /* Services become 2 columns */
+
+    .card-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* About and contact become one column */
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+}
+
+
+/* =========================================
+   PHONE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 65px 0;
+    }
+
+
+    /* Navigation spacing */
+
+    .nav-list {
+        gap: 10px 14px;
+    }
+
+
+    .nav-list a {
+        font-size: 0.82rem;
+    }
+
+
+    /* Smaller hero */
+
+    .hero {
+        min-height: 560px;
+    }
+
+
+    .hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+
+    /* Everything becomes one column */
+
+    .card-grid,
+    .program-grid,
+    .price-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .card {
+        min-height: auto;
+    }
+
+
+    .contact-form {
+        padding: 25px;
+    }
+
+
+    .footer-inner {
+        flex-direction: column;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+}
